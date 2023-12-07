@@ -113,7 +113,7 @@ def leis(site):
         json_file.write(json_data)
 
     out_file_path = f'{today}.json'
-    client.put_object(Body=open(out_file_path, 'rb'), Bucket='ai4gov-colected-data', Key=f"leis-munincipais/{today}.json")
+    client.put_object(Body=open(out_file_path, 'rb'), Bucket='ai-colected-data', Key=f"leis-munincipais/{today}.json")
 
     os.remove(out_file_path)
     print('>>> Uploaded to S3!')
@@ -125,7 +125,7 @@ def leis(site):
         aws_secret_access_key=os.environ.get('AWS_SECRET_ACCESS_KEY'))
 
     # Replace "client" with "ec2_client" in your code
-    ec2_client.stop_instances(InstanceIds=["i-0f8efbcc91ae85b48"])
+    ec2_client.stop_instances(InstanceIds=["Your-Instance-id"])
 
 # Call the function to scrape data
 leis(site)
