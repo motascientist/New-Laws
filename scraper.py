@@ -41,7 +41,7 @@ def leis(site):
 
     # Loop through each municipality
     for municipality in municipalities:
-        url = f"{site}{municipality}"
+        url = f"{site}{municipality[21:]}"
         print(f"Scraping data for: {url}")
 
         # Retry logic
